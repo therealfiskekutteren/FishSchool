@@ -1,4 +1,7 @@
 from Main import *
+import pygame
+
+print("fish loaded")
 
 class Fish:
 
