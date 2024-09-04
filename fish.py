@@ -15,3 +15,4 @@ class Fish:
 
     def update(self):
         self.__pos += self.__vel
+    

@@ -2,6 +2,7 @@
 import pygame
 from vector import *
 from fish import *
+from flock import *
 
 # pygame setup
 #initialiserer alle de nødvendige moduler, der kræves for at bruge Pygame. Pygame består af flere moduler, hver med sit eget formål, såsom grafik, lyd, inputhåndtering osv.
@@ -18,9 +19,11 @@ running = True
 pos = Vector(30,30)
 spd = Vector(1,1)
 f = Fish(pos,spd)
+ff = Fish(Vector(60,60),Vector(1,1))
+flock = Flock()
+flock.addFish(f)
+flock.addFish(ff)
 
-fish_img = pygame.image.load('Fisk.png')
-fish_img = pygame.transform.scale(fish_img,(50,50))
 
 while running:
     
@@ -38,8 +41,8 @@ while running:
     #Her skal animationen være
     
 
-    f.update()
-    f.draw(screen)
+    flock.updateFlock()
+    flock.drawFlock(screen)
 
     
 
